@@ -6,7 +6,7 @@
 #    By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/01 16:58:24 by iwaslet           #+#    #+#              #
-#    Updated: 2025/11/06 17:42:29 by iwaslet          ###   ########.fr        #
+#    Updated: 2025/11/06 17:59:50 by iwaslet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS= main.cpp \
 		PresidentialPardonForm.cpp \
 		RobotomyRequestForm.cpp \
 		ShrubberyCreationForm.cpp \
+		Intern.cpp \
 
 OBJS=$(SRCS:.cpp=.o)
 
