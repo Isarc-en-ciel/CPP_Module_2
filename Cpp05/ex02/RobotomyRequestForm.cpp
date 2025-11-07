@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 18:31:01 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/06 18:06:51 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/07 16:13:01 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		this->beExec(executor);
 		int random = rand() % 2;
 	
-		std::cout << random << std::endl;
 		std::cout << "*drilling noises*" << std::endl;
 		if (random == 0)
 		std::cout << _target << " has been robotomized" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:59:36 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/07 15:13:21 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/07 16:03:30 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class AForm;
 
@@ -26,6 +29,9 @@ class Intern
 	~Intern();
 	Intern &operator=(const Intern &inst);
 	AForm *makeForm(std::string type, std::string target);
+	AForm *newPresidentialPardon(const std::string target);
+	AForm *newRobotomyRequest(const std::string target);
+	AForm *newShrubberyCreation(const std::string target);
 };
 
 #endif

@@ -6,12 +6,12 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:04:32 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/07 15:18:33 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/07 16:04:28 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
-#define BUREACRAT_HPP
+#define BUREAUCRAT_HPP
 
 # include <iostream>
 # include <cstring>
