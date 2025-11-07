@@ -6,11 +6,12 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 16:23:21 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/03 18:08:45 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/07 15:18:54 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FORM_HPP
+#define FORM_HPP
 
 # include <iostream>
 # include <cstring>
@@ -45,3 +46,5 @@ class Form {
 };
 
 std::ostream& operator<<(std::ostream & obj, Form &inst);
+
+#endif

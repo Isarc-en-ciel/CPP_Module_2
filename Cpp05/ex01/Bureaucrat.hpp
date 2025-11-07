@@ -6,11 +6,12 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:04:32 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/03 18:09:59 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/07 15:18:33 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_HPP
+#define BUREACRAT_HPP
 
 # include <iostream>
 # include <cstring>
@@ -45,3 +46,5 @@ class Bureaucrat
 };
 
 std::ostream& operator<<(std::ostream & obj, Bureaucrat &inst);
+
+#endif

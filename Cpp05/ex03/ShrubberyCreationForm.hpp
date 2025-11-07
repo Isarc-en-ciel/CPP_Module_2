@@ -6,11 +6,12 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 18:30:48 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/06 17:25:38 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/07 15:14:10 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef SHUBBERYCREATIONFORM_HPP
+#define SHUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp" 
 
@@ -26,3 +27,5 @@ class ShrubberyCreationForm : public AForm {
 
 	virtual void execute(Bureaucrat const & executor) const;
 };
+
+#endif
