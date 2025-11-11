@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:04:32 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/07 16:04:28 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/11 14:38:01 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form;
 class Bureaucrat 
 {
 	private:
-	std::string name;
+	const std::string name;
 	int grade;
 	public:
 	Bureaucrat();

@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 17:04:23 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/03 18:26:06 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/11 14:37:56 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,17 @@ Bureaucrat::Bureaucrat()
 	return;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name1, int grade) : name(name1)
 {
-	try
-	{
-		if (grade > 150)
-			throw GradeTooLowException();
-		if (grade < 1)
-			throw GradeTooHighException();
-		this->grade = grade;
-		this->name = name;
-	}
-	catch(std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return;
+	if (grade > 150)
+		throw GradeTooLowException();
+	if (grade < 1)
+		throw GradeTooHighException();
+	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &inst)
+Bureaucrat::Bureaucrat(Bureaucrat &inst) : name(inst.name)
 {
-	this->name = inst.name;
 	this->grade = inst.grade;
 	return;
 }
@@ -50,10 +40,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &inst)
 {
 	if (this != &inst)
-	{
-		this->name = inst.name;
 		this->grade = inst.grade;
-	}
 	return (*this);
 }
 
