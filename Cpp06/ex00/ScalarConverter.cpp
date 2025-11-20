@@ -23,6 +23,8 @@ void ScalarConverter::convert(std::string toConvert)
 
 void ScalarConverter::toChar(std::string toConvert)
 {
+	char c;
+
 	std::cout << "Char : " << std::endl;
 	try{
 		if (1)
@@ -33,17 +35,26 @@ void ScalarConverter::toChar(std::string toConvert)
 	}
 }
 
-void ScalarConverter::toInt(std::string toConvert)
+void ScalarConverter::toInt(std::string toConvert) //rajouter protections intmax etc pour tous 
 {
+	
+	int	i;
+	
 	std::cout << "Int : " << std::endl;
 }
 
 void ScalarConverter::toFloat(std::string toConvert)
 {
+	float f;
+
 	std::cout << "Float : " << std::endl;
 }
 
 void ScalarConverter::toDouble(std::string toConvert)
 {
+	std::stringstream ss(toConvert);
+	double	d = static_cast<double>(toConvert);
+
+
 	std::cout << "Double : " << std::endl;
 }

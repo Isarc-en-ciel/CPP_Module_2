@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*  ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:05:24 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/12 17:00:16 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/20 17:43:52 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <sstream>
+#include <ostream>
+#include <ctype.h>
+#include <limits>
 
 class ScalarConverter
 {
