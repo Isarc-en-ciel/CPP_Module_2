@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:05:24 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/20 17:43:52 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/11/21 15:54:51 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,20 @@
 #include <sstream>
 #include <ostream>
 #include <ctype.h>
-#include <limits>
+#include <iomanip>
+#include <limits.h>
 
 class ScalarConverter
 {
 	public:
-	static void convert(std::string toConvert);
-	static void toChar(std::string toConvert);
-	static void toInt(std::string toConvert);
-	static void toFloat(std::string toConvert);
-	static void toDouble(std::string toConvert);
+	static void convert(const std::string& toConvert);
+	static void toChar(const std::string& toConvert);
+	static void toInt(const std::string& toConvert);
+	static void toFloat(const std::string& toConvert);
+	static void toDouble(const std::string& toConvert);
 	
+	static double getDouble(const std::string& str);
+	static long long getChar(const std::string& str);
 };
 
 #endif
