@@ -12,8 +12,45 @@
 
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter()
+{}
+
+ScalarConverter::ScalarConverter(ScalarConverter const &src)
+{
+	(void)src;
+}
+
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &cpy)
+{
+	(void)cpy;
+	return(*this);
+}
+
+ScalarConverter::~ScalarConverter()
+{}
+
 void ScalarConverter::convert(const std::string& toConvert) //comportement particulier inf/nan
 {
+	if ((((static_cast<int>(getDouble(toConvert))) == 0 && toConvert[0] != '0')) || (!solve(toConvert) && toConvert.length() > 1) || toConvert.empty())
+	{
+		int i = 0;
+		std::string info[] = { "+inf", "+inff", "-inf", "-inff" , "nanf", "nan", ""};
+		while (!info[i].empty())
+		{
+			SpecialFunc funcs[] = { get_pos_inf, get_pos_inf, get_neg_inf, get_neg_inf, get_nan, get_nan };
+			if (info[i] == toConvert)
+			{
+				std::cout << "double: " << funcs[i]() << std::endl;
+				std::cout << "float: " << funcs[i]() << "f" << std::endl;
+				std::cout << "char: impossible" << std::endl;
+				std::cout << "int:  impossible" << std::endl;
+				return ;
+			}
+			i++;
+		}
+		std::cerr << "INVALID STRING" << std::endl;
+		return ;
+	}
 	toChar(toConvert);
 	toInt(toConvert);
 	toFloat(toConvert);
@@ -31,7 +68,7 @@ void ScalarConverter::toChar(const std::string& toConvert)
 
 void ScalarConverter::toInt(const std::string& toConvert)
 {
-	if(getChar(toConvert) <= INT_MAX && getChar(toConvert) >= INT_MIN)
+	if(getChar(toConvert) <= std::numeric_limits<int>::max() && getChar(toConvert) >= -std::numeric_limits<int>::min())
 		std::cout << "int is: <" << getChar(toConvert) << ">" << std::endl;
 	else
 		std::cout << "int is: <" << "impossible" << ">" << std::endl;
@@ -45,7 +82,7 @@ void ScalarConverter::toFloat(const std::string& toConvert)
 		std::cout << "float is: <" << "impossible" << ">" << std::endl;
 }
 
-void ScalarConverter::toDouble(const std::string& toConvert) //pas de gestion des limites
+void ScalarConverter::toDouble(const std::string& toConvert)
 {
 	std::cout << "Double is:{" << std::fixed << std::setprecision(1) << getDouble(toConvert) << "} " << std::endl;
 }
@@ -79,4 +116,16 @@ long long ScalarConverter::getChar(const std::string& str)
 		return(l);
 	}
 	return(static_cast<long long>(c));
+}
+
+double get_pos_inf() {
+    return std::numeric_limits<double>::infinity();
+}
+
+double get_neg_inf() {
+    return -std::numeric_limits<double>::infinity();
+}
+
+double get_nan() {
+    return std::numeric_limits<double>::quiet_NaN();
 }
