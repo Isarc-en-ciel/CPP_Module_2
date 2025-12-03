@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 17:20:41 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/28 16:13:05 by iwaslet          ###   ########.fr       */
+/*   Created: 2025/11/28 15:18:08 by iwaslet           #+#    #+#             */
+/*   Updated: 2025/11/28 16:08:10 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
-#include <iostream>
-#include <ostream>
 
-int	main()
+Serializer::Serializer()
+{}
+
+Serializer::Serializer(Serializer const &src)
 {
-	int a = 25;
-	Data d= {&a};
-	uintptr_t raw = Serializer::serialize(&d);
-	std::cout << d.ptr << " : " <<*(int*)(d.ptr) << std::endl;
-	std::cout <<"raw: " << raw << std::endl;
-	std::cout << Serializer::deserialize(raw) << std::endl;
-	Data *D =	Serializer::deserialize(raw);
-	std::cout << D->ptr << " : " <<*(int*)(D->ptr) << std::endl;
-	
-	return (0);
+	(void)src;
+}
+
+Serializer &Serializer::operator=(Serializer const &cpy)
+{
+	(void)cpy;
+	return(*this);
+}
+
+Serializer::~Serializer()
+{}
+
+uintptr_t Serializer::serialize(Data* ptr)
+{
+	return reinterpret_cast<uintptr_t>(ptr);
+}
+
+Data* Serializer::deserialize(uintptr_t raw)
+{
+	return reinterpret_cast<Data*>(raw);
 }
