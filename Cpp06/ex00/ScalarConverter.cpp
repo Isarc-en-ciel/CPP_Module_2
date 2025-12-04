@@ -79,7 +79,7 @@ void toFloat(const std::string& toConvert)
 	std::cout << "float is: <" << "impossible" << ">" << std::endl;
 }
 
-void toDouble(const std::string& toConvert) //check double max ?
+void toDouble(const std::string& toConvert)
 {
 	std::cout << "Double is:{" << std::fixed << std::setprecision(1) << getDouble(toConvert) << "} " << std::endl;
 }
