@@ -6,9 +6,12 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 16:57:35 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/12/02 15:29:13 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/12/04 16:15:17 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef  Base_HPP
+#define Base_HPP
 
 # include <iostream>
 # include <cstdlib>
@@ -19,3 +22,5 @@ class Base
 	public:
 	virtual ~Base();
 };
+
+#endif

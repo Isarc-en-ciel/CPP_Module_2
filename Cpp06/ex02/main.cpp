@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:20:46 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/12/02 16:41:54 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/12/04 16:16:45 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "B.hpp"
 #include "C.hpp"
 
-Base *generate(void)
+Base *generate(void)  //utiliser switch ?
 {
 	std::srand(std::time(0));
 	int random = rand() % 3;

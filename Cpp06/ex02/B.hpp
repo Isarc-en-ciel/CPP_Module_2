@@ -6,11 +6,16 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 16:57:48 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/11/28 19:24:11 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/12/04 16:14:43 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef  B_HPP
+#define B_HPP
 
 #include "Base.hpp"
 
 class B: public Base
 {};
+
+#endif
