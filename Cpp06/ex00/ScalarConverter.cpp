@@ -73,7 +73,7 @@ void toInt(const std::string& toConvert)
 
 void toFloat(const std::string& toConvert)
 {
-	if (getDouble(toConvert) <= std::numeric_limits<float>::max() && getDouble(toConvert) > -std::numeric_limits<float>::max())
+	if (getDouble(toConvert) <= std::numeric_limits<float>::max() && getDouble(toConvert) >= -std::numeric_limits<float>::max())
 	std::cout << "float is: [" << std::fixed << std::setprecision(1) << (static_cast<float>(getDouble(toConvert))) << "f]" << std::endl;
 	else
 	std::cout << "float is: <" << "impossible" << ">" << std::endl;
@@ -138,10 +138,10 @@ void ScalarConverter::convert(const std::string& toConvert)
 			SpecialFunc funcs[] = { get_pos_inf, get_pos_inf, get_neg_inf, get_neg_inf, get_nan, get_nan };
 			if (info[i] == toConvert)
 			{
-				std::cout << "double: " << funcs[i]() << std::endl;
-				std::cout << "float: " << funcs[i]() << "f" << std::endl;
 				std::cout << "char: impossible" << std::endl;
 				std::cout << "int:  impossible" << std::endl;
+				std::cout << "float: " << funcs[i]() << "f" << std::endl;
+				std::cout << "double: " << funcs[i]() << std::endl;
 				return;
 			}
 			i++;

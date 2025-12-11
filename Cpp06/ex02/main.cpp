@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 17:20:46 by iwaslet           #+#    #+#             */
-/*   Updated: 2025/12/04 16:16:45 by iwaslet          ###   ########.fr       */
+/*   Updated: 2025/12/11 17:41:46 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,27 @@
 #include "B.hpp"
 #include "C.hpp"
 
-Base *generate(void)  //utiliser switch ?
+Base *generate(void)
 {
-	std::srand(std::time(0));
-	int random = rand() % 3;
-	if (random == 0)
+	srand(time(NULL));
+
+	switch(rand() % 3)
 	{
-		std::cout << "A generated" << std::endl;
-		return (new A);
-	}
-	else if (random == 1)
-	{
-		std::cout << "B generated" << std::endl;
-		return (new B);
-	}
-	else
-	{
-		std::cout << "C generated" << std::endl;
-		return (new C);
+		case 0:
+		{
+			std::cout << "A generated" << std::endl;
+			return (new A);
+		}
+		case 1:
+		{
+			std::cout << "B generated" << std::endl;
+			return (new B);
+		}
+		default:
+		{
+			std::cout << "C generated" << std::endl;
+			return (new C);
+		}
 	}
 }
 
