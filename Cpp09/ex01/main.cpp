@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:10:59 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/19 18:18:21 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/02/20 16:45:19 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(int ac, char** av)
 	std::stack<int> nbrs;
 	try
 	{
+		check_input(av[1]);
 		int result = stack_deal(nbrs, str);
 		std::cout << result << std::endl;
 		return (result);

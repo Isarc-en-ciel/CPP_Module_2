@@ -6,14 +6,13 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:09:23 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/19 19:26:29 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/02/20 16:27:05 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 
-#include <string>
 #include <cstring>
 #include <iostream>
 #include <sstream>

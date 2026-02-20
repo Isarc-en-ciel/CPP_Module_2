@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:09:15 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/19 19:49:22 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/02/20 16:42:07 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int	check_date(std::string date)
 	ss >> day;
 	if (year == 0 || month == 0 || day == 0)
 		return (-1);
-	if (year < 2009 || year > 2026 || month > 12  || day > 31)
+	if (year < 2009 || month > 12  || day > 31)
 		return (-1);
 	if (!is_valid_day(day, month, year))
 		return (-1);
@@ -180,7 +180,7 @@ float	find_value(std::string date, std::map<std::string, float> &data_file)
 		{
 			if (it != data_file.begin())
 			{
-				it--;
+				it--;	
 				return(it->second);	
 			}
 			else
@@ -191,7 +191,7 @@ float	find_value(std::string date, std::map<std::string, float> &data_file)
 		}
 		it++;
 	}
-	return (-1);
+	return(47115.93);
 }
 
 float	calc_result(float input_val, float data_val)

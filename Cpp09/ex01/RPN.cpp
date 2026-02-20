@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:11:21 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/19 18:30:24 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/02/20 16:55:12 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,18 @@ const char	*GeneralErrors::what() const throw()
 		default:
 			return ("Error");
 	}
+}
+
+void	check_input(std::string input)
+{
+	if (input.length() == 0)
+		throw GeneralErrors(INVALID);
+	int flag = 0;
+	for (size_t i = 0; i < input.length(); i++)
+	{
+		if (!isspace(input[i]))
+			flag++;
+	}
+	if (flag == 0)
+		throw GeneralErrors(INVALID);
 }
