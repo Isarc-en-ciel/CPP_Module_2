@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:12:19 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/20 16:56:28 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/02/25 13:37:52 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,24 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <deque>
 
-//using at least vectors
+enum e_errors
+{
+	INVALID,
+	SYNTAX
+};
+
+class GeneralErrors : public std::exception
+{
+	private:
+		int _err;
+	public:
+		GeneralErrors(int err = -1) : _err(err) {}
+		virtual const char *what() const throw();
+};
+
+
+void	check_input(std::string input);
 
 #endif
