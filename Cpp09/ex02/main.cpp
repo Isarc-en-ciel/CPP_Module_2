@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:12:41 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/03/03 13:49:16 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 13:54:50 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int ac, char** av)
 	try
 	{
 		check_input(av[1]);
+		
 		clock_t start_vec = clock();
 		std::vector<int> vec;
 		fill_cont(vec, av[1]);
@@ -43,6 +44,7 @@ int main(int ac, char** av)
 		deque = sort_FJ(deque);
 		clock_t end_deque = clock();
 		double time_elapsed_deque = static_cast<double>(end_deque - start_deque) / CLOCKS_PER_SEC;
+		
 		std::cout << "Vector after: ";
 		print_container(vec);
 		std::cout << "Deque after: ";
