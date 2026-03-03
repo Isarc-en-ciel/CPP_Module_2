@@ -6,7 +6,7 @@
 #    By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/29 18:08:22 by iwaslet           #+#    #+#              #
-#    Updated: 2026/01/29 18:25:24 by iwaslet          ###   ########.fr        #
+#    Updated: 2026/03/02 19:32:09 by iwaslet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC= c++
 CPPFLAGS= -Werror -Wextra -Wall -std=c++98 -fsanitize=address
 
 SRCS= main.cpp \
-		PmergeMe.cpp \
+		PmergeMe.cpp
 
 OBJS=$(SRCS:.cpp=.o)
 

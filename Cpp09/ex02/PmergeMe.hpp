@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:12:19 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/25 13:37:52 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 13:13:34 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@
 #include <cctype>
 #include <cstdlib>
 #include <ctime>
+#include <complex>
 #include <vector>
 #include <deque>
+#include <algorithm>
 
 enum e_errors
 {
 	INVALID,
-	SYNTAX
+	SYNTAX,
+	DOUBLES
 };
 
 class GeneralErrors : public std::exception
@@ -38,7 +41,30 @@ class GeneralErrors : public std::exception
 		virtual const char *what() const throw();
 };
 
-
 void	check_input(std::string input);
+void	check_contents(std::string input);
+int 	is_nbr(std::string elem);
+int		Jacobsthal(int k);
+
+template <typename type>
+void check_doubles(type &container);
+
+template <typename type>
+void fill_cont(type& container,std::string input);
+
+template <typename type>
+void fct_insert(type &main, type &pend, int odd, type &left, type &container, bool is_odd, int order);
+
+template <typename type>
+void	sort(type& container);
+
+template <typename type>
+void	print_container(type& container);
+
+template <typename type>
+void insert_fct(type& container, int to_insert);
+
+template <typename type>
+type sort_FJ(type &container);
 
 #endif
