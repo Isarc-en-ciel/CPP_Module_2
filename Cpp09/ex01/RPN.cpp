@@ -6,13 +6,13 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:11:21 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/20 16:55:12 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 16:26:09 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-int	stack_deal(std::stack<int> &nbrs, std::string str)
+long long	stack_deal(std::stack<long long> &nbrs, std::string str)
 {
 	std::stringstream ss(str);
 	std::string value;
@@ -28,16 +28,18 @@ int	stack_deal(std::stack<int> &nbrs, std::string str)
 		{
 			if (nbrs.size() < 2)
 				throw GeneralErrors(SYNTAX);
-			int a = nbrs.top();
+			long long a = nbrs.top();
 			nbrs.pop();
-			int b = nbrs.top();
+			long long b = nbrs.top();
 			nbrs.pop();
-			int to_push = operate(value[0], b, a);
+			long long to_push = operate(value[0], b, a);
 			nbrs.push(to_push);
 		}
 	}
 	if (nbrs.size() > 1)
 		throw GeneralErrors(SYNTAX);
+	if (nbrs.top() > INT_MAX || nbrs.top() < INT_MIN)
+		throw GeneralErrors(LARGE);
 	return (nbrs.top());
 }
 
@@ -48,7 +50,7 @@ bool	is_operator(char c)
 	return (false);
 }
 
-int		operate(char c, int a, int b)
+long long		operate(char c, long long a, long long b)
 {
 	switch (c)
 	{
@@ -75,6 +77,8 @@ const char	*GeneralErrors::what() const throw()
 			return ("Invalid input");
 		case SYNTAX:
 			return ("Syntax wrong");
+		case LARGE:
+			return ("yo mamma has too big a heart");
 		default:
 			return ("Error");
 	}

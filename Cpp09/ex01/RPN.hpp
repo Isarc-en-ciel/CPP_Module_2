@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:11:37 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/20 16:46:58 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 16:25:48 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@
 #include <cstdlib>
 #include <ctime>
 #include <stack>
+#include <climits>
 
 enum e_errors
 {
 	INVALID,
-	SYNTAX
+	SYNTAX,
+	LARGE
 };
 
-int		stack_deal(std::stack<int> &nbrs, std::string str);
-bool	is_operator(char c);
-int		operate(char c, int a, int b);
-void	check_input(std::string input);
+long long		stack_deal(std::stack<long long> &nbrs, std::string str);
+bool			is_operator(char c);
+long long		operate(char c, long long a, long long b);
+void			check_input(std::string input);
 
 class GeneralErrors : public std::exception
 {

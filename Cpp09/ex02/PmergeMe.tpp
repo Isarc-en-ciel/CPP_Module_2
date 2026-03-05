@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 14:45:52 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/03/03 13:14:37 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 16:51:38 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ template <typename type>
 void fill_cont(type& container,std::string input)
 {
 	std::stringstream ss(input);
-	int elem;
+	std::string elem;
 	while (ss >> elem)
 	{
-		container.push_back(elem);
+		long val = atol(elem.c_str());
+		if (val > INT_MAX || val < INT_MIN)
+			throw GeneralErrors(INVALID);
+		container.push_back(val);
 	}
 	check_doubles(container);
 }

@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:12:19 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/03/03 13:13:34 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 16:43:44 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PMERGEME_HPP
 
 #include <cstring>
+#include <climits>
 #include <iostream>
 #include <sstream>
 #include <fstream>

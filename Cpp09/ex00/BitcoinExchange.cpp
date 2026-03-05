@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:09:15 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/02/20 16:42:07 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/03 16:11:55 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ void calculate_btc(std::map<std::string, float> &data_file, std::ifstream &file,
 		nbr = check_value(value, flag);
 		float a = find_value(date, data_file);
 		float result = calc_result(nbr, a);
-		if (a > 0 && result > 0)
+		if (a >= 0 && result >= 0)
 			std::cout << date << " => " << nbr << " = " << result << std::endl;
 	}
 }
