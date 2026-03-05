@@ -6,7 +6,7 @@
 /*   By: iwaslet <iwaslet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:12:41 by iwaslet           #+#    #+#             */
-/*   Updated: 2026/03/03 13:54:50 by iwaslet          ###   ########.fr       */
+/*   Updated: 2026/03/05 18:09:05 by iwaslet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,5 @@ int main(int ac, char** av)
 	}
 	return (0);
 }
+
+/*ARG=$(seq 3000 | sort -r | tr "\n" " "); ./PmergeMe $ARG*/
